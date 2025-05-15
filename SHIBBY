@@ -48,7 +48,7 @@ document.onkeydown = e => {
     let matrixDrops = [];
     const matrixChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*()+=_[]{}\\|;:?/.,<>-ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽltal';
 
-    let adPanelElement = null; // For the new ad panel
+    
 
     // Define large strings first
     const stylesString = `
@@ -369,7 +369,7 @@ document.onkeydown = e => {
         "const scriptLoadButtonStyled = document.getElementById('shibby-script-load-button-styled');",
         "const scriptFileInput = document.getElementById('shibby-script-file-input');",
         "let originalContentEditable = document.body.isContentEditable; let isMinimized = false;",
-        "adPanelElement = document.createElement('div'); adPanelElement.id = 'shibby-ad-panel'; adPanelElement.innerHTML = 'COMING SOON'; document.body.appendChild(adPanelElement); setTimeout(() => { if(adPanelElement) { adPanelElement.classList.add('shibby-visible'); updateAdPanelPosition(); } }, parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--shibby-animation-duration') || '0.3s') * 1000 + 150);",
+        
         "mouseMoveListenerGlobal = (e) => { lastMouseX = e.clientX; lastMouseY = e.clientY; };",
         "document.addEventListener('mousemove', mouseMoveListenerGlobal);",
         "const performClose = () => { if (isAutoclicking) { isAutoclicking = false; clearInterval(autoclickIntervalId); if (autoclickerKeydownListener) document.removeEventListener('keydown', autoclickerKeydownListener); autoclickerKeydownListener = null; if(toggleAutoclick) toggleAutoclick.checked = false;} if(mouseMoveListenerGlobal) document.removeEventListener('mousemove', mouseMoveListenerGlobal); mouseMoveListenerGlobal = null; if (matrixCanvas) matrixCanvas.remove(); if (matrixIntervalId) clearInterval(matrixIntervalId); matrixIntervalId = null; clientContainer.style.opacity = '0'; clientContainer.style.transform = 'scale(0.9) translateY(20px)'; if (adPanelElement) { adPanelElement.classList.remove('shibby-visible'); } setTimeout(() => { if (clientContainer.parentNode) clientContainer.remove(); if (styleSheetElement.parentNode) styleSheetElement.remove(); if (adPanelElement && adPanelElement.parentNode) { adPanelElement.remove(); adPanelElement = null; } document.documentElement.classList.remove('shibby-dark-mode-filter'); if (document.body.hasAttribute('data-shibby-contenteditable-original')) { document.body.contentEditable = document.body.getAttribute('data-shibby-contenteditable-original'); document.body.removeAttribute('data-shibby-contenteditable-original'); } else { document.body.contentEditable = originalContentEditable; } document.body.style.cursor = ''; }, 300); };",
